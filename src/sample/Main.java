@@ -43,19 +43,27 @@ public class Main extends Application {
         primaryStage.setOnCloseRequest(e -> close(primaryStage));
         circles=new ArrayList<>();
         cirPane=new CircularPane();
-        double dist1=500.0;
-        double dist2=400.0;
-        double dist3=200.0;
+        ArrayList<Dimension> testSize=new ArrayList<>();
 
-        double targSize1=25.0;
-        double targSize2=10.0;
+        testSize.add(new Dimension(500.0,25.0));
+        testSize.add(new Dimension(500.0,10.0));
+        testSize.add(new Dimension(400.0,25.0));
+        testSize.add(new Dimension(400.0,10.0));
+        testSize.add(new Dimension(200.0,25.0));
+        testSize.add(new Dimension(200.0,10.0));
+
         startTest=0;
-        tests.add(new Test(dist1,targSize1));
-        tests.add(new Test(dist1,targSize2));
-        tests.add(new Test(dist2,targSize1));
-        tests.add(new Test(dist2,targSize2));
-        tests.add(new Test(dist3,targSize1));
-        tests.add(new Test(dist3,targSize2));
+
+        Random rand = new Random();
+        int k=testSize.size();
+        while(k>0){
+            int index=rand.nextInt(testSize.size());
+            System.out.println(testSize.get(index).getDiam()+" "+testSize.get(index).getTarSize());
+            tests.add(new Test(testSize.get(index).getDiam(),testSize.get(index).getTarSize()));
+            testSize.remove(index);
+            k=testSize.size();
+        }
+
         cirPane.setDiameter(tests.get(indexTest).getDistance());
 
         for (int i=0;i<9;i++){
@@ -71,7 +79,6 @@ public class Main extends Application {
 
         primaryStage.setTitle("Fitts’s Law");
         primaryStage.setScene(scene1);
-        Random rand = new Random();
         startingPoint=rand.nextInt(9);
         point=startingPoint;
         iteration=0;

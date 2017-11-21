@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="org.jfxtras:jfxtras-window:8.0-r5" type="repository">
+    <properties maven-id="org.jfxtras:jfxtras-window:8.0-r5" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jfxtras/jfxtras-window/8.0-r5/jfxtras-window-8.0-r5.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jfxtras/jfxtras-common/8.0-r5/jfxtras-common-8.0-r5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
